@@ -8,7 +8,6 @@ pip install --user virtualenv
 mkdir venv
 virtualenv venv
 source venv/bin/activate
-echo "source venv/bin/activate
 echo "source venv/bin/activate" >> ~/.bash_profile
 pip install boto
 pip install boto3
