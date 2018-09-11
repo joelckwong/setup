@@ -1,1 +1,1 @@
-# awcli
+# installawscli
