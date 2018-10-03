@@ -13,7 +13,7 @@ pip install boto
 pip install boto3
 pip install awscli
 pip install -I ansible
-pip install credstash
+pip install --user credstash
 curl https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip --output terraform_0.11.8_linux_amd64.zip
 sudo unzip terraform_0.11.8_linux_amd64.zip -d /usr/bin
 curl https://releases.hashicorp.com/packer/1.2.5/packer_1.2.5_linux_amd64.zip --output packer_1.2.5_linux_amd64.zip
