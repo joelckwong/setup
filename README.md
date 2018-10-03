@@ -1,4 +1,4 @@
-# installawscli quickly installs aws cli, ansible, credstash, packer and terraform
+# installawscli quickly installs aws cli, ansible, credstash, packer and terraform on centos/redhat
 Instructions
 1. sudo yum -y install git
 2. mkdir repos; cd repos
