@@ -7,3 +7,5 @@ Instructions
 5. ./runfirst.sh
 6. ./centos.sh or ubuntu.sh
 7. log out and log in
+8. aws config
+9. credstash setup
