@@ -6,6 +6,6 @@ Instructions
 4. cd installawscli
 5. ./runfirst.sh
 6. ./centos.sh or ubuntu.sh
-7. log out and log in
+7. sudo shutdown -r now
 8. aws config
 9. credstash setup
