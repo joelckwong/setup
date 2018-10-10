@@ -18,3 +18,4 @@ curl https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd6
 sudo unzip terraform_0.11.8_linux_amd64.zip -d /usr/bin
 curl https://releases.hashicorp.com/packer/1.2.5/packer_1.2.5_linux_amd64.zip --output packer_1.2.5_linux_amd64.zip
 sudo unzip packer_1.2.5_linux_amd64.zip -d /usr/bin
+cp -p terraform-provider-credstash /usr/bin
