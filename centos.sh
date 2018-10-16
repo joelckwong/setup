@@ -24,3 +24,10 @@ providers {
      credstash = "/usr/bin/terraform-provider-credstash"
 }
 EOF
+mkdir ~/repos
+cd ~/repos
+git clone https://github.com/uriagassi/sash.git
+cd sash
+make install
+echo "source ~/.local/bin/sash.sh" >> ~/.bashrc
+source ~/.bashrc
