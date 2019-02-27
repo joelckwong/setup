@@ -1,14 +1,14 @@
 #!/bin/bash
 echo $(hostname -I | cut -d\  -f1) $(hostname) | sudo tee -a /etc/hosts
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install python3 wget netcat-openbsd unzip
+sudo apt-get -y install python3 python3-distutils wget netcat-openbsd unzip curl virtualenv make
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python3 get-pip.py
 pip install --upgrade pip
 pip install --user virtualenv
 mkdir ~/venv
-virtualenv ~/venv
+virtualenv -p python3 ~/venv
 source ~/venv/bin/activate
 echo "source venv/bin/activate" >> ~/.bash_profile
 pip install boto
