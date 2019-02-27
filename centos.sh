@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo yum -y update
-sudo yum -y install wget nc bind-utils unzip
+sudo yum -y install wget nc bind-utils unzip python36
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
-sudo python get-pip.py
+sudo python3.6 get-pip.py
 pip install --upgrade pip
 pip install --user virtualenv
 mkdir ~/venv
