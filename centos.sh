@@ -19,6 +19,7 @@ curl https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_am
 sudo unzip terraform_0.12.10_linux_amd64.zip -d /usr/bin
 curl https://releases.hashicorp.com/packer/1.4.4/packer_1.4.4_linux_amd64.zip --output packer_1.4.4_linux_amd64.zip
 sudo unzip packer_1.4.4_linux_amd64.zip -d /usr/bin
+curl https://github.com/sspinc/terraform-provider-credstash/releases/download/0.4.0/terraform-provider-credstash_linux_amd64 --output terraform-provider-credstash
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
 providers {
