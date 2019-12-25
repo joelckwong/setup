@@ -16,10 +16,10 @@ pip install boto3
 pip install awscli
 pip install -I ansible
 pip install credstash
-curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip --output terraform_0.11.13_linux_amd64.zip
-sudo unzip terraform_0.11.13_linux_amd64.zip -d /usr/bin
-curl https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip --output packer_1.4.5_linux_amd64.zip
-sudo unzip packer_1.4.0_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip --output terraform_0.12.18_linux_amd64.zip
+sudo unzip terraform_0.12.18_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip --output packer_1.5.1_linux_amd64.zip
+sudo unzip packer_1.5.1_linux_amd64.zip -d /usr/bin
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
 providers {
@@ -33,3 +33,11 @@ cd sash
 make install
 echo "source ~/.local/bin/sash.sh" >> ~/.bashrc
 source ~/.bashrc
+sudo apt-get -y update
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get -y update
+sudo apt-get -y install docker-ce
+sudo systemctl start docker && sudo systemctl enable docker
+sudo usermod -aG docker $LOGNAME

@@ -15,10 +15,10 @@ pip install boto3
 pip install awscli
 pip install -I ansible
 pip install credstash
-curl https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_linux_amd64.zip --output terraform_0.12.10_linux_amd64.zip
-sudo unzip terraform_0.12.10_linux_amd64.zip -d /usr/bin
-curl https://releases.hashicorp.com/packer/1.4.4/packer_1.4.4_linux_amd64.zip --output packer_1.4.4_linux_amd64.zip
-sudo unzip packer_1.4.4_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip --output terraform_0.12.18_linux_amd64.zip
+sudo unzip terraform_0.12.18_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip --output packer_1.5.1_linux_amd64.zip
+sudo unzip packer_1.5.1_linux_amd64.zip -d /usr/bin
 curl https://github.com/sspinc/terraform-provider-credstash/releases/download/0.4.0/terraform-provider-credstash_linux_amd64 --output terraform-provider-credstash
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
@@ -33,3 +33,8 @@ cd sash
 make install
 echo "source ~/.local/bin/sash.sh" >> ~/.bashrc
 source ~/.bashrc
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum -y install docker-ce
+sudo systemctl start docker && sudo systemctl enable docker
+sudo usermod -aG docker $LOGNAME
