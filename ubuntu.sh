@@ -2,7 +2,7 @@
 echo $(hostname -I | cut -d\  -f1) $(hostname) | sudo tee -a /etc/hosts
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install python3 python3-distutils wget netcat-openbsd unzip curl virtualenv make git
+sudo apt-get -y install python3 python3-distutils wget netcat-openbsd unzip curl virtualenv make git curl
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python3 get-pip.py
 pip install --upgrade pip
