@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo yum -y update
 sudo yum -y install epel-release
-sudo yum -y install wget nc bind-utils unzip python36 python36-devel openssl-devel gcc git
+sudo yum -y install wget nc bind-utils unzip python36 python36-devel openssl-devel gcc git sshpass
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python3.6 get-pip.py
 pip install --upgrade pip
