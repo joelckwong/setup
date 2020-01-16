@@ -3,7 +3,7 @@ echo $(hostname -I | cut -d\  -f1) $(hostname) | sudo tee -a /etc/hosts
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install python3 python3-distutils wget netcat-openbsd unzip curl virtualenv make git sshpass
-sudo apt install python3-pip
+sudo apt-get -y install python3-pip
 pip3 install --upgrade pip
 pip3 install --user virtualenv
 mkdir ~/venv
