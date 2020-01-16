@@ -6,4 +6,4 @@ cat << EOF > ~/.ssh/config
 Host *
     StrictHostKeyChecking no
 EOF
-chmod 600 /home/jkwong/.ssh/config
+chmod 600 ~/.ssh/config
