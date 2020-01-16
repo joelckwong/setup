@@ -4,7 +4,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install python3 python3-distutils wget netcat-openbsd unzip curl virtualenv make git sshpass
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
-python3 get-pip.py
+sudo python3 get-pip.py
 pip install --upgrade pip
 pip install --user virtualenv
 mkdir ~/venv
