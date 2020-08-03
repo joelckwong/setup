@@ -15,10 +15,10 @@ pip install boto3
 pip install awscli
 pip install -I ansible
 pip install credstash
-curl https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip --output terraform_0.12.24_linux_amd64.zip
-sudo unzip terraform_0.12.24_linux_amd64.zip -d /usr/bin
-curl https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip --output packer_1.5.5_linux_amd64.zip
-sudo unzip packer_1.5.5_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip --output terraform_0.12.29_linux_amd64.zip
+sudo unzip terraform_0.12.29_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/packer/1.6.1/packer_1.6.1_linux_amd64.zip --output packer_1.6.1_linux_amd64.zip
+sudo unzip packer_1.6.1_linux_amd64.zip -d /usr/bin
 curl https://github.com/sspinc/terraform-provider-credstash/releases/download/0.4.1/terraform-provider-credstash_linux_amd64 --output terraform-provider-credstash
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
@@ -38,10 +38,10 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum -y install docker-ce
 sudo systemctl start docker && sudo systemctl enable docker
 sudo usermod -aG docker $LOGNAME
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-curl https://get.helm.sh/helm-v3.1.1-linux-amd64.tar.gz --output helm-v3.1.1-linux-amd64.tar.gz
-tar -zxvf helm-v3.1.1-linux-amd64.tar.gz
+curl https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz --output helm-v3.2.4-linux-amd64.tar.gz
+tar -zxvf helm-v3.2.4-linux-amd64.tar.gz
 chmod +x linux-amd64/helm
 sudo mv linux-amd64/helm /usr/bin/helm
 sudo chown root: /usr/bin/helm
