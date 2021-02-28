@@ -15,10 +15,14 @@ pip3 install boto3
 pip3 install awscli
 pip3 install -I ansible
 pip3 install credstash
-curl https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip --output terraform_0.12.29_linux_amd64.zip
-sudo unzip terraform_0.12.29_linux_amd64.zip -d /usr/bin
-curl https://releases.hashicorp.com/packer/1.6.1/packer_1.6.1_linux_amd64.zip --output packer_1.6.1_linux_amd64.zip
-sudo unzip packer_1.6.1_linux_amd64.zip -d /usr/bin
+sudo curl -o /usr/bin/kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+sudo chmod +x /usr/bin/kubectl
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/bin
+curl https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip --output terraform_0.14.7_linux_amd64.zip
+sudo unzip terraform_0.14.7_linux_amd64.zip -d /usr/bin
+curl https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip --output packer_1.7.0_linux_amd64.zip
+sudo unzip packer_1.7.0_linux_amd64.zip -d /usr/bin
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
 providers {
@@ -40,10 +44,10 @@ sudo apt-get -y update
 sudo apt-get -y install docker-ce
 sudo systemctl start docker && sudo systemctl enable docker
 sudo usermod -aG docker $LOGNAME
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-curl https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz --output helm-v3.2.4-linux-amd64.tar.gz
-tar -zxvf helm-v3.2.4-linux-amd64.tar.gz
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+curl https://get.helm.sh/helm-v3.5.2-linux-amd64.tar.gz --output helm-v3.5.2-linux-amd64.tar.gz
+tar -zxvf helm-v3.5.2-linux-amd64.tar.gz
 chmod +x linux-amd64/helm
 sudo mv linux-amd64/helm /usr/bin/helm
 sudo chown root: /usr/bin/helm
