@@ -16,7 +16,8 @@ pip install awscli
 pip install -I ansible
 pip install credstash
 sudo curl -o /usr/bin/kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-sudo chmod +x /usr/bin/kubectl
+sudo curl -o /usr/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
+sudo chmod +x /usr/bin/kubectl /usr/bin/aws-iam-authenticator
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/bin
 curl https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip --output terraform_0.14.7_linux_amd64.zip
