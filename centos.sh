@@ -20,10 +20,10 @@ sudo curl -o /usr/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amaz
 sudo chmod +x /usr/bin/kubectl /usr/bin/aws-iam-authenticator
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/bin
-curl https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip --output terraform_0.14.7_linux_amd64.zip
-sudo unzip terraform_0.14.7_linux_amd64.zip -d /usr/bin
-curl https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip --output packer_1.7.0_linux_amd64.zip
-sudo unzip packer_1.7.0_linux_amd64.zip -d /usr/bin
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install terraform
+sudo yum -y install packer
 curl https://github.com/sspinc/terraform-provider-credstash/releases/download/0.5.0/terraform-provider-credstash_linux_amd64 --output terraform-provider-credstash
 sudo cp -p terraform-provider-credstash /usr/bin
 cat << EOF > ~/.terraformrc
