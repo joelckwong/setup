@@ -23,6 +23,7 @@ sudo mv /tmp/eksctl /usr/bin
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 sudo yum -y install terraform
+terraform -install-autocomplete
 sudo yum -y install packer
 curl https://github.com/sspinc/terraform-provider-credstash/releases/download/0.5.0/terraform-provider-credstash_linux_amd64 --output terraform-provider-credstash
 sudo cp -p terraform-provider-credstash /usr/bin
