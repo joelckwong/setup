@@ -15,8 +15,8 @@ pip3 install boto3
 pip3 install awscli
 pip3 install -I ansible
 pip3 install credstash
-sudo curl -o /usr/bin/kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-sudo curl -o /usr/bin/aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/aws-iam-authenticator
+sudo curl -Lo /usr/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo curl -Lo /usr/bin/aws-iam-authenticator https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.6.27/aws-iam-authenticator_0.6.27_linux_amd64
 sudo chmod +x /usr/bin/kubectl /usr/bin/aws-iam-authenticator
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/bin
@@ -46,10 +46,8 @@ sudo apt-get -y update
 sudo apt-get -y install docker-ce
 sudo systemctl start docker && sudo systemctl enable docker
 sudo usermod -aG docker $LOGNAME
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
-sudo chmod +x /usr/bin/docker-compose
-curl https://get.helm.sh/helm-v3.5.2-linux-amd64.tar.gz --output helm-v3.5.2-linux-amd64.tar.gz
-tar -zxvf helm-v3.5.2-linux-amd64.tar.gz
+curl https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz --output helm-v3.16.2-linux-amd64.tar.gz
+tar -zxvf helm-v3.16.2-linux-amd64.tar.gz
 chmod +x linux-amd64/helm
 sudo mv linux-amd64/helm /usr/bin/helm
 sudo chown root: /usr/bin/helm
