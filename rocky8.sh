@@ -28,6 +28,9 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashi
 sudo dnf -y install terraform
 terraform -install-autocomplete
 sudo dnf -y install packer
+packer plugins install github.com/hashicorp/amazon
+packer plugins install github.com/hashicorp/ansible
+packer plugins install github.com/hashicorp/vsphere
 curl -Lo terraform-provider-credstash https://github.com/sspinc/terraform-provider-credstash/releases/download/v0.5.0/terraform-provider-credstash_linux_amd64
 sudo install -o root -g root -m 0755 terraform-provider-credstash /usr/local/bin/terraform-provider-credstash
 cat << EOF > ~/.terraformrc
