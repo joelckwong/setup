@@ -1,0 +1,4 @@
+aws-iam-authenticator
+eksctl
+kubectl
+terraform-provider-credstash

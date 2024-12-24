@@ -5,7 +5,7 @@ Instructions
 3. git clone https://github.com/joelckwong/setupvm.git
 4. cd setupvm
 5. ./runfirst.sh
-6. ./centos.sh or ./ubuntu.sh
+6. ./rocky8.sh or ./ubuntu.sh
 7. sudo shutdown -r now
 8. aws configure
 9. credstash setup
