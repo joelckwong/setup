@@ -6,6 +6,4 @@ Instructions
 4. cd setupvm
 5. ./runfirst.sh
 6. ./rocky8.sh or ./ubuntu.sh
-7. sudo shutdown -r now
-8. aws configure
-9. credstash setup
+7. aws configure
